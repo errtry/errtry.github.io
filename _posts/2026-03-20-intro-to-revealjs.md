@@ -14,6 +14,20 @@ mindmap2: false
 
 > 💡 Reveal.js 是一个基于 HTML/CSS/JavaScript 的开源演示框架，可以让你用网页技术做出漂亮的幻灯片。
 
+> 📚 **配套教案**：以下是该文章的配套演示 PPT，可用于教学演示
+
+<div style="margin: 20px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+  <iframe src="/assets/slides/revealjs-tutorial.html"
+          width="100%"
+          height="480"
+          frameborder="0"
+          allowfullscreen
+          style="display:block;">
+  </iframe>
+</div>
+
+---
+
 ## 什么是 Reveal.js？
 
 Reveal.js 由 [Hakim El Hattab](https://twitter.com/hakimel) 创建，是一个用于构建演示文稿的 HTML 框架。与传统 PPT 不同，它是纯代码驱动的——你只需要写 HTML 或 Markdown，就能创建支持动画、代码高亮、演讲者视图的幻灯片。

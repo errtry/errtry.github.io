@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reveal.js 介绍</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+  <style>
+    :root { --accent: #6c5ce7; --accent2: #00b894; }
+    .reveal .slides section { text-align: left; }
+    .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+    .reveal h1 { font-size: 1.6em; color: var(--accent); }
+    .reveal h2 { font-size: 1.1em; color: #2d3436; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+    .reveal h3 { font-size: 0.95em; color: #636e72; }
+    .reveal p, .reveal li { font-size: 0.72em; line-height: 1.7; }
+    .reveal pre { font-size: 0.6em; }
+    .reveal code { color: var(--accent); }
+    .tag { display: inline-block; background: var(--accent); color: #fff; border-radius: 4px; padding: 2px 8px; font-size: 0.5em; vertical-align: middle; margin-left: 6px; }
+    .tag.green { background: var(--accent2); }
+    .tag.red { background: #d63031; }
+    .center { text-align: center; }
+    .title-slide { text-align: center; }
+    .title-slide h1 { font-size: 1.8em; margin-bottom: 0.3em; }
+    .title-slide .sub { color: #636e72; font-size: 0.7em; margin-bottom: 1em; }
+    .title-slide .author { color: #aaa; font-size: 0.6em; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+    .feature-item { background: #f8f9fa; border-radius: 8px; padding: 12px; text-align: center; }
+    .feature-item .icon { font-size: 1.5em; margin-bottom: 4px; }
+    .feature-item .title { font-weight: bold; font-size: 0.7em; margin-bottom: 4px; }
+    .feature-item .desc { font-size: 0.55em; color: #636e72; }
+    .step-list { list-style: none; padding: 0; }
+    .step-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 0.7em; }
+    .step-num { min-width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8em; flex-shrink: 0; }
+    .step-num.green { background: var(--accent2); }
+    .step-num.red { background: #d63031; }
+    .code-block { background: #2d3436; border-radius: 8px; padding: 12px; color: #fff; font-size: 0.55em; overflow-x: auto; }
+    .code-block code { color: #fab1a0; }
+    .note-box { background: #fff3cd; border-left: 4px solid #f39c12; padding: 10px 14px; border-radius: 4px; font-size: 0.65em; margin-top: 12px; }
+    .warn-box { background: #f8d7da; border-left: 4px solid #d63031; padding: 10px 14px; border-radius: 4px; font-size: 0.65em; margin-top: 12px; }
+    .tip-box { background: #d4edda; border-left: 4px solid #28a745; padding: 10px 14px; border-radius: 4px; font-size: 0.65em; margin-top: 12px; }
+    table { font-size: 0.6em; width: 100%; border-collapse: collapse; }
+    th { background: var(--accent); color: #fff; padding: 8px !important; }
+    td { padding: 6px 10px !important; border: 1px solid #ddd; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .key-item { background: #f1f2f6; border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; font-size: 0.65em; }
+    .key-item code { background: #dfe6e9; padding: 2px 6px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- 封面 -->
+    <section class="title-slide">
+      <div style="font-size:3em; margin-bottom:0.2em;">📊</div>
+      <h1>Reveal.js 入门教程</h1>
+      <p class="sub">让网页演示变得优雅</p>
+      <p class="author">教案演示</p>
+    </section>
+
+    <!-- 什么是 Reveal.js -->
+    <section>
+      <h2>📚 什么是 Reveal.js？</h2>
+      <p>Reveal.js 是一个基于 <strong>HTML/CSS/JavaScript</strong> 的开源演示框架</p>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="icon">🎨</div>
+          <div class="title">精美主题</div>
+          <div class="desc">多种内置主题</div>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📝</div>
+          <div class="title">Markdown</div>
+          <div class="desc">支持 MD 编写</div>
+        </div>
+        <div class="feature-item">
+          <div class="icon">💻</div>
+          <div class="title">代码高亮</div>
+          <div class="desc">内置 highlight.js</div>
+        </div>
+        <div class="feature-item">
+          <div class="icon">✨</div>
+          <div class="title">动画效果</div>
+          <div class="desc">多种过渡模式</div>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📱</div>
+          <div class="title">响应式</div>
+          <div class="desc">适配各种设备</div>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📄</div>
+          <div class="title">PDF 导出</div>
+          <div class="desc">打印或分享</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 快速开始 -->
+    <section>
+      <h2>🚀 快速开始</h2>
+      <div class="two-col">
+        <div>
+          <h3>方式一：CDN 引入</h3>
+          <div class="code-block">
+<pre><code>&lt;link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"&gt;
+&lt;link rel="stylesheet" 
+  href=".../theme/white.css"&gt;
+&lt;script src=".../reveal.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  Reveal.initialize();
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+        <div>
+          <h3>方式二：npm 安装</h3>
+          <div class="code-block">
+<pre><code>npm install reveal.js
+
+import Reveal from 'reveal.js';
+import 'reveal.js/dist/reveal.css';
+
+const deck = new Reveal({
+  hash: true,
+  transition: 'slide'
+});
+deck.initialize();</code></pre>
+          </div>
+        </div>
+      </div>
+    <div class="note-box">💡 CDN 方式最简单，无需安装即可快速演示</div>
+    </section>
+
+    <!-- 基础结构 -->
+    <section>
+      <h2>📋 基础 HTML 结构</h2>
+      <div class="code-block">
+<pre><code>&lt;div class="reveal"&gt;
+  &lt;div class="slides"&gt;
+    &lt;section&gt;
+      &lt;h1&gt;第一页&lt;/h1&gt;
+      &lt;p&gt;内容...&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h2&gt;第二页&lt;/h2&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <ul class="step-list" style="margin-top:16px;">
+        <li><div class="step-num">1</div><div><code>&lt;section&gt;</code> 代表一张幻灯片</div></li>
+        <li><div class="step-num">2</div><div>横向 <code>---</code> 分隔页面</div></li>
+        <li><div class="step-num">3</div><div>纵向 <code>--</code> 创建垂直幻灯片</div></li>
+      </ul>
+    </section>
+
+    <!-- 主题 -->
+    <section>
+      <h2>🎨 主题选择</h2>
+      <table>
+        <thead><tr><th>主题</th><th>说明</th><th>适用场景</th></tr></thead>
+        <tbody>
+          <tr><td><code>black</code></td><td>黑色背景</td><td>技术演示</td></tr>
+          <tr><td><code>white</code></td><td>白色背景</td><td>文档教程</td></tr>
+          <tr><td><code>night</code></td><td>深色主题</td><td>暗光环境</td></tr>
+          <tr><td><code>beige</code></td><td>米色背景</td><td>温馨演讲</td></tr>
+          <tr><td><code>league</code></td><td>蓝灰配色</td><td>商务演示</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block" style="margin-top:12px;">
+<pre><code>&lt;link href=".../theme/white.css" rel="stylesheet"&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- 过渡动画 -->
+    <section>
+      <h2>✨ 过渡动画</h2>
+      <div class="two-col">
+        <div>
+          <h3>效果类型</h3>
+          <div class="key-item"><code>none</code> 无</div>
+          <div class="key-item"><code>fade</code> 淡入淡出</div>
+          <div class="key-item"><code>slide</code> 滑动</div>
+          <div class="key-item"><code>convex</code> 凸起</div>
+          <div class="key-item"><code>concave</code> 凹陷</div>
+          <div class="key-item"><code>zoom</code> 缩放</div>
+        </div>
+        <div>
+          <h3>配置方式</h3>
+          <div class="code-block">
+<pre><code>Reveal.initialize({
+  transition: 'slide',
+  transitionSpeed: 'default'
+});</code></pre>
+          </div>
+          <div class="note-box" style="margin-top:12px;">
+            也可在单页指定：<br/>
+            <code>&lt;section data-transition="zoom"&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 代码高亮 -->
+    <section>
+      <h2>💻 代码高亮</h2>
+      <p>Reveal.js 内置 highlight.js，支持 100+ 语言</p>
+      <div class="code-block">
+<pre><code>&lt;section&gt;
+  &lt;pre&gt;&lt;code class="language-python"&gt;
+def hello():
+    print("Hello World!")
+  &lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;</code></pre>
+      </div>
+      <div class="tip-box" style="margin-top:12px;">
+        支持：Python、JavaScript、Java、C++、Go、Ruby、SQL、HTML、CSS...
+      </div>
+    </section>
+
+    <!-- Fragments -->
+    <section>
+      <h2>🎭 Fragments 逐步显示</h2>
+      <p>让内容逐个出现，增强演示节奏</p>
+      <div class="code-block">
+<pre><code>&lt;li class="fragment"&gt;第一步&lt;/li&gt;
+&lt;li class="fragment"&gt;第二步&lt;/li&gt;
+&lt;li class="fragment"&gt;第三步&lt;/li&gt;</code></pre>
+      </div>
+      <div class="two-col" style="margin-top:16px;">
+        <div>
+          <h3>效果类名</h3>
+          <div class="key-item"><code>fade-out</code> 渐出</div>
+          <div class="key-item"><code>fade-up/down/left/right</code></div>
+          <div class="key-item"><code>grow</code> 放大</div>
+          <div class="key-item"><code>shrink</code> 缩小</div>
+          <div class="key-item"><code>highlight-red</code> 高亮</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 背景 -->
+    <section>
+      <h2>🖼️ 背景设置</h2>
+      <ul class="step-list">
+        <li><div class="step-num">纯色</div><div><code>data-background-color="#ff0000"</code></div></li>
+        <li><div class="step-num green">图片</div><div><code>data-background-image="bg.jpg"</code></div></li>
+        <li><div class="step-num green">视频</div><div><code>data-background-video="video.mp4"</code></div></li>
+        <li><div class="step-num green">渐变</div><div><code>data-background-gradient="linear-gradient(...)"</code></div></li>
+      </ul>
+      <div class="note-box" style="margin-top:16px;">
+        💡 视频背景会自动静音，建议使用 MP4 + WebM 双格式
+      </div>
+    </section>
+
+    <!-- 演讲者视图 -->
+    <section>
+      <h2>📺 演讲者视图</h2>
+      <div class="two-col">
+        <div>
+          <h3>快捷键</h3>
+          <div class="key-item"><code>S</code> 打开演讲者视图</div>
+          <div class="key-item"><code>ESC</code> 全览模式</div>
+          <div class="key-item"><code>F</code> 全屏</div>
+          <div class="key-item"><code>B</code> 暂停</div>
+        </div>
+        <div>
+          <h3>添加备注</h3>
+          <div class="code-block">
+<pre><code>&lt;section&gt;
+  &lt;h2&gt;标题&lt;/h2&gt;
+  &lt;aside class="notes"&gt;
+    观众看不到的备注...
+  &lt;/aside&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常用配置 -->
+    <section>
+      <h2>⚙️ 常用配置</h2>
+      <div class="code-block">
+<pre><code>Reveal.initialize({
+  hash: true,              // URL 哈希跟踪
+  controls: true,          // 导航箭头
+  progress: true,           // 进度条
+  center: true,            // 居中显示
+  width: 960,              // 宽度
+  height: 540,             // 高度
+  slideNumber: true,       // 页码
+  transition: 'slide',     // 过渡效果
+  keyboard: true,          // 键盘控制
+  overview: true,         // ESC 全览
+});</code></pre>
+      </div>
+    </section>
+
+    <!-- 嵌入网页 -->
+    <section>
+      <h2>🔗 嵌入网页</h2>
+      <div class="two-col">
+        <div>
+          <h3>iframe 嵌入</h3>
+          <div class="code-block">
+<pre><code>&lt;iframe 
+  src="slides.html"
+  width="100%"
+  height="500"
+  frameborder="0"
+  allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+          </div>
+        </div>
+        <div>
+          <h3>嵌入式模式</h3>
+          <div class="code-block">
+<pre><code>Reveal.initialize({
+  embedded: true,
+  hash: false
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 注意事项 -->
+    <section>
+      <h2>⚠️ 注意事项</h2>
+      <ul class="step-list">
+        <li><div class="step-num red">1</div><div><strong>国内访问</strong> - 建议本地化或使用国内 CDN</div></li>
+        <li><div class="step-num red">2</div><div><strong>浏览器兼容</strong> - 不支持 IE11，需现代浏览器</div></li>
+        <li><div class="step-num red">3</div><div><strong>性能</strong> - 大图片/视频建议压缩</div></li>
+        <li><div class="step-num red">4</div><div><strong>移动端</strong> - 避免复杂动画和过小字体</div></li>
+        <li><div class="step-num red">5</div><div><strong>PDF 导出</strong> - 加 <code>?print-pdf</code> 后打印</div></li>
+      </ul>
+    </section>
+
+    <!-- 进阶技巧 -->
+    <section>
+      <h2>🚀 进阶技巧</h2>
+      <div class="two-col">
+        <div>
+          <h3>自动播放</h3>
+          <div class="code-block">
+<pre><code>Reveal.configure({
+  autoSlide: 5000,
+  autoSlideStoppable: false
+});</code></pre>
+          </div>
+        </div>
+        <div>
+          <h3>监听事件</h3>
+          <div class="code-block">
+<pre><code>Reveal.on('slidechanged', e => {
+  console.log(e.indexh);
+});
+
+Reveal.on('fragmentshown', e => {
+  console.log('fragment!');
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 总结 -->
+    <section class="title-slide">
+      <div style="font-size:3em; margin-bottom:0.2em;">🎉</div>
+      <h1>总结</h1>
+      <p style="font-size:0.7em; color:#636e72;">
+        Reveal.js = HTML 演示框架<br/>
+        优势：版本控制友好 · 易于分享 · 支持 Markdown<br/>
+        适用：技术分享 · 文档教程 · 在线课程
+      </p>
+      <div class="note-box" style="margin-top:20px; text-align:left;">
+        📚 <strong>课后练习：</strong><br/>
+        1. 用 CDN 方式创建一个 "Hello World" 幻灯片<br/>
+        2. 添加代码高亮和 fragments 效果<br/>
+        3. 尝试用 iframe 嵌入到网页中
+      </div>
+    </section>
+
+    <!-- 参考 -->
+    <section>
+      <h2>📚 参考资源</h2>
+      <ul>
+        <li>🌐 <strong>官网</strong>: <a href="https://revealjs.com/">revealjs.com</a></li>
+        <li>🐙 <strong>GitHub</strong>: <a href="https://github.com/hakimel/reveal.js">github.com/hakimel/reveal.js</a></li>
+        <li>🎨 <strong>在线编辑器</strong>: <a href="https://slides.com/">slides.com</a></li>
+      </ul>
+      <div class="tip-box" style="margin-top:20px;">
+        💡 多看官方示例 demos，多动手练习！
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    controls: true,
+    progress: true,
+    center: false,
+    width: 900,
+    height: 540,
+    margin: 0.08,
+    slideNumber: 'c/t',
+    plugins: [ RevealHighlight, RevealNotes ]
+  });
+</script>
+</body>
+</html>
