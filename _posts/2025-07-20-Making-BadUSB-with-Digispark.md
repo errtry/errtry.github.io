@@ -14,6 +14,16 @@ mindmap2: false
 
 前几天在 B站 闲逛刷到了关于 BadUSB 的视频，其中 [UP 主 "无序熵增" 的 BadUSB 视频][1] 对于我的需求是成本最低的方案，所以买来尝试一下。
 
+<div style="margin: 24px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+  <iframe src="/assets/slides/badusb-digispark.html"
+          width="100%"
+          height="480"
+          frameborder="0"
+          allowfullscreen
+          style="display:block;">
+  </iframe>
+</div>
+
 > ⚠️ **免责声明**：本文仅供安全研究和教育目的。未经授权对他人设备进行攻击属于违法行为。请确保在自有设备或获得明确授权的环境下测试。
 
 ## 什么是 BadUSB？
