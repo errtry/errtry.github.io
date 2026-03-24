@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geekhappy.com/sitemap.xml
+
+# Disallow common non-content paths
+Disallow: /search/
+Disallow: /feed.xml

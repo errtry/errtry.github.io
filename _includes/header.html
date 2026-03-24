@@ -75,6 +75,43 @@
     <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">
     {% endif %}
 
+    {% if page.layout == 'post' %}
+    <!-- 结构化数据：文章 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ page.title }}",
+      "description": "{{ page.description | default: page.excerpt | default: site.description }}",
+      "author": {
+        "@type": "Person",
+        "name": "牛马便利店一号店员"
+      },
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "牛马假日",
+        "url": "https://geekhappy.com"
+      }
+    }
+    </script>
+    {% else %}
+    <!-- 结构化数据：网站 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "牛马假日",
+      "url": "https://geekhappy.com",
+      "description": "记录一些奇奇怪怪，防止忘记后找不到",
+      "author": {
+        "@type": "Person",
+        "name": "牛马"
+      }
+    }
+    </script>
+    {% endif %}
+
     <script src="{{ assets_base_url }}/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="{{ assets_base_url }}/assets/js/main.js"></script>
 

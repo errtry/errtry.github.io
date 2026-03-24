@@ -6,8 +6,8 @@ url: https://geekhappy.com
 date_format: "ordinal"
 title: 牛马假日
 subtitle: "牛马的记忆一直不好"
-description: "记录一些奇奇怪怪，防止忘记后找不到"
-keywords: 牛马假日, geekhappy
+description: "记录一些奇奇怪怪，防止忘记后找不到。包含技术分享、开源项目、命令速查等实用内容。"
+keywords: 牛马假日, geekhappy, 技术博客, 开源, 命令速查, Linux, Git, Docker, Python
 timezone: Asia/Shanghai
 encoding: "utf-8"
 # 页面左下角显示的年份
@@ -204,7 +204,7 @@ simple_jekyll_search:
 #      Google      #
 # ---------------- #
 google:
-    analytics_id: # G-20FLEG5Q2W
+    analytics_id: G-20FLEG5Q2W
     adsense:
         enabled: true
         footer: true
