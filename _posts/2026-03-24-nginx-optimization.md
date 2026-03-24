@@ -4,7 +4,7 @@ title: Nginx 性能调优：让网站快 10 倍的实战指南
 categories: [DevOps]
 description: 从基础配置到生产级优化，详细讲解 Nginx 性能调优的各个维度
 keywords: Nginx, 性能优化, Web服务器, 高并发, 缓存
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false

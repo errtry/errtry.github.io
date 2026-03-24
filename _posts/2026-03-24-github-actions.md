@@ -4,7 +4,7 @@ title: GitHub Actions 自动化工作流实战
 categories: [DevOps]
 description: 详细讲解 GitHub Actions 的配置与实战，包括 CI/CD、自动化部署、定时任务
 keywords: GitHub Actions, CI/CD, 自动化, DevOps, GitHub
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false

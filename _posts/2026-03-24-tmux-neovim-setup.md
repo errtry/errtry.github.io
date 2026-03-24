@@ -4,7 +4,7 @@ title: 使用 Tmux 和 Neovim 打造终极终端开发环境
 categories: [Tools]
 description: 详细讲解 Tmux 终端多路复用和 Neovim 配置，打造高效终端开发环境
 keywords: Tmux, Neovim, 终端, 开发环境, Vim
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false

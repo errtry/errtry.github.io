@@ -4,7 +4,7 @@ title: 如何在团队推广新技术：我的经验与踩坑
 categories: [Work]
 description: 从实际经验出发，讲如何在团队中成功推广一项新技术，包括常见坑和应对策略
 keywords: 技术推广, 团队协作, 技术管理, 工程师成长
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false

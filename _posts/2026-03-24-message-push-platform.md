@@ -4,7 +4,7 @@ title: 从零搭建一个消息推送平台：架构设计与实现
 categories: [Project]
 description: 详细讲解如何从零设计并实现一个支持多渠道的消息推送平台
 keywords: 消息推送, 消息队列, RabbitMQ, Go, 微服务
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false

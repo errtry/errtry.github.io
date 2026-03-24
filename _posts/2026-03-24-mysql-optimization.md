@@ -4,7 +4,7 @@ title: 一次 MySQL 慢查询优化实战全过程
 categories: [Database]
 description: 记录一次真实的慢查询优化过程，从分析到优化再到验证的完整流程
 keywords: MySQL, 慢查询, SQL优化, 索引, EXPLAIN
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false

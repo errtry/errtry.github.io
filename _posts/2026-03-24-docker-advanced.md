@@ -4,7 +4,7 @@ title: Docker 进阶：从开发到生产级集群部署
 categories: [DevOps]
 description: 详细讲解 Docker Compose、Docker Swarm、镜像优化、生产级部署实践
 keywords: Docker, Docker Compose, Docker Swarm, 容器编排, 部署
-author: errtry
+author: 牛马便利店一号店员
 mermaid: false
 sequence: false
 flow: false
