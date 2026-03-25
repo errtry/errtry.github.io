@@ -1,11 +1,31 @@
-- name: Software Engineer Keywords
+- name: 后端开发
   keywords:
-      - Java
-      - ASP.NET
       - Python
+      - Go
+      - Node.js
+      - Java
+      - MySQL
+      - Redis
 
-- name: Windows Developer Keywords
+- name: 运维/DevOps
   keywords:
-      - .NET Framework
-      - Delphi
-      - COM
+      - Docker
+      - Nginx
+      - Linux
+      - GitHub Actions
+      - Shell
+
+- name: 工具/效率
+  keywords:
+      - Vim/Neovim
+      - Tmux
+      - Git
+      - 正则表达式
+      - Reveal.js
+
+- name: AI/自动化
+  keywords:
+      - OpenClaw
+      - Claude
+      - GPT
+      - 自动化脚本
