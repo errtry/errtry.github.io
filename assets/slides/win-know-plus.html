@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiNEX 智能知识库检索系统 v3.0</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+    <style>
+        :root {
+            --primary-color: #4183c4;
+            --secondary-color: #ff6b6b;
+        }
+        
+        .reveal .slides {
+            text-align: left;
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: var(--primary-color);
+        }
+        
+        .reveal .highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .reveal .code-block {
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8em;
+        }
+        
+        .reveal .architecture {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .reveal .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .reveal .comparison-table th,
+        .reveal .comparison-table td {
+            border: 1px solid #666;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .reveal .comparison-table th {
+            background: var(--primary-color);
+        }
+        
+        .reveal .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- 封面 -->
+            <section>
+                <h1>WiNEX 智能知识库检索系统 v3.0</h1>
+                <h3>四路知识源统一检索</h3>
+                <p>分享人：errtry</p>
+                <p>时间：2026年3月30日</p>
+            </section>
+
+            <!-- 痛点 -->
+            <section>
+                <h2>🤔 我们遇到了什么问题？</h2>
+                <div class="code-block">
+客户问：「门诊退费审核怎么配置？」
+
+我们需要：
+1. 查 Wiki → 配置说明
+2. 查 SVN → 实施手册  
+3. 查 TFS → 历史工单
+4. 查本地文档 → 项目资料
+
+<span class="highlight">四个地方来回切换，效率低下！</span>
+                </div>
+                <p class="fragment">平均每次查询耗时：<span class="highlight">10-30分钟</span></p>
+            </section>
+
+            <!-- 解决方案 -->
+            <section>
+                <h2>💡 我们的解决方案</h2>
+                <h3 class="highlight">一个命令，四路齐发</h3>
+                <div class="code-block">
+# 统一检索命令
+node search_all.mjs "门诊退费审核"
+                </div>
+                <p class="fragment">平均耗时：<span class="highlight">1-2分钟</span></p>
+                <p class="fragment">效率提升：<span class="highlight">5-10倍</span></p>
+            </section>
+
+            <!-- 系统架构 -->
+            <section>
+                <h2>🏗️ 系统架构</h2>
+                <div class="architecture">
+                    <div style="background: #333; padding: 20px; border-radius: 10px; width: 80%;">
+                        <h4>统一检索入口</h4>
+                        <code>node search_all.mjs "关键词"</code>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%;">
+                        <div style="background: #2a2a2a; padding: 15px; border-radius: 8px;">
+                            <h5>📚 Wiki</h5>
+                            <small>winwiki.winning.com.cn</small>
+                            <p>配置说明、解决方案</p>
+                        </div>
+                        <div style="background: #2a2a2a; padding: 15px; border-radius: 8px;">
+                            <h5>📁 SVN</h5>
+                            <small>svn.winning.com.cn</small>
+                            <p>实施手册、培训视频</p>
+                        </div>
+                        <div style="background: #2a2a2a; padding: 15px; border-radius: 8px;">
+                            <h5>📋 TFS</h5>
+                            <small>tfs2018-web.winning.com.cn</small>
+                            <p>需求、任务、Bug</p>
+                        </div>
+                        <div style="background: #2a2a2a; padding: 15px; border-radius: 8px;">
+                            <h5>💾 本地文档</h5>
+                            <small>E:\sdkq\文档</small>
+                            <p>226份，1.7GB</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 功能演示 -->
+            <section>
+                <h2>🎬 功能演示</h2>
+                <div class="code-block" style="font-size: 0.7em;">
+$ node search_all.mjs "门诊退费审核"
+
+━━━ 📁 Wiki ━━━
+[1] 门诊退药-药房申请退药医生审核
+    https://winwiki.winning.com.cn/pages/viewpage.action?pageId=28708
+
+━━━ 📁 SVN文档 ━━━
+📄 实施手册-门诊系统.pdf
+    路径：/实施文档/门诊系统/实施手册-门诊系统.pdf
+
+━━━ 📁 TFS工作项 ━━━
+📄 [1085089] 东明县中医医院-门诊退费审核对接
+    状态：已完成
+
+━━━ 📁 本地文档 ━━━
+📄 WN-SSJS-PZ-001《业务配置手册》-WiNEX财务.docx
+    路径：E:\sdkq\文档\业务配置手册\...
+                </div>
+            </section>
+
+            <!-- 技术实现 -->
+            <section>
+                <h2>⚙️ 技术实现</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h5>并行检索</h5>
+                        <div class="code-block" style="font-size: 0.6em;">
+const tasks = [
+  { name: 'Wiki', cmd: `node wiki/run.mjs` },
+  { name: 'TFS', cmd: `node search_tfs.mjs` },
+  { name: 'SVN', cmd: `python search_svn.py` },
+  { name: '本地文档', cmd: `python winex_search.py` }
+];
+
+// 四路并行执行
+await Promise.allSettled(tasks);
+                        </div>
+                    </div>
+                    <div>
+                        <h5>缓存机制</h5>
+                        <div class="code-block" style="font-size: 0.6em;">
+// 5分钟缓存
+const CACHE_TTL = 5 * 60 * 1000;
+
+function getCache(key) {
+  // 检查缓存是否有效
+  if (Date.now() - cacheTime < CACHE_TTL) {
+    return cachedData;
+  }
+  return null;
+}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 性能对比 -->
+            <section>
+                <h2>📊 性能对比</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>对比项</th>
+                            <th>传统方式</th>
+                            <th>本系统</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>耗时</td>
+                            <td>10-30分钟</td>
+                            <td class="highlight">1-2分钟</td>
+                        </tr>
+                        <tr>
+                            <td>完整性</td>
+                            <td>❌ 可能漏掉</td>
+                            <td class="highlight">✅ 四路全覆盖</td>
+                        </tr>
+                        <tr>
+                            <td>易用性</td>
+                            <td>❌ 切换多个系统</td>
+                            <td class="highlight">✅ 一个命令搞定</td>
+                        </tr>
+                        <tr>
+                            <td>新人上手</td>
+                            <td>❌ 困难</td>
+                            <td class="highlight">✅ 简单</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 使用场景 -->
+            <section>
+                <h2>🎯 使用场景</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h5>👨‍💼 客户咨询</h5>
+                        <p>客户问 → 一键搜索 → 完整答案</p>
+                        <small>5分钟内给出专业回复</small>
+                    </div>
+                    <div>
+                        <h5>👶 新人培训</h5>
+                        <p>新人问 → 自己搜 → 快速成长</p>
+                        <small>减少老员工带教时间</small>
+                    </div>
+                    <div>
+                        <h5>🐛 问题排查</h5>
+                        <p>报错 → 搜索 → 解决方案</p>
+                        <small>快速定位问题原因</small>
+                    </div>
+                    <div>
+                        <h5>📈 知识沉淀</h5>
+                        <p>经验 → 文档 → 可检索</p>
+                        <small>团队知识资产积累</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 安装部署 -->
+            <section>
+                <h2>🚀 安装部署</h2>
+                <div class="code-block">
+# 1. 克隆仓库
+git clone https://github.com/errtry/win-know-plus.git
+
+# 2. 安装依赖
+cd win-know-plus
+npm install
+
+# 3. 配置账号（联系管理员）
+# 复制 config/ 目录下的配置文件
+
+# 4. 测试
+node search_all.mjs "测试"
+                </div>
+                <p class="fragment">环境要求：Python 3.12+、Node.js 16+</p>
+            </section>
+
+            <!-- 未来规划 -->
+            <section>
+                <h2>🔮 未来规划</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h5>v3.1（计划中）</h5>
+                        <ul style="font-size: 0.8em;">
+                            <li>✅ Web 界面（可视化）</li>
+                            <li>✅ 搜索结果收藏</li>
+                            <li>✅ 自动知识图谱</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>v4.0（规划中）</h5>
+                        <ul style="font-size: 0.8em;">
+                            <li>✅ AI 智能问答</li>
+                            <li>✅ 知识自动更新</li>
+                            <li>✅ 移动端支持</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 总结 -->
+            <section>
+                <h2>🎯 总结</h2>
+                <div style="text-align: center;">
+                    <h3 class="highlight">解决四大痛点</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                        <div>
+                            <h5>知识分散</h5>
+                            <p>→ 四路统一检索</p>
+                        </div>
+                        <div>
+                            <h5>查找困难</h5>
+                            <p>→ 一个命令搞定</p>
+                        </div>
+                        <div>
+                            <h5>效率低下</h5>
+                            <p>→ 并行+缓存</p>
+                        </div>
+                        <div>
+                            <h5>新人上手难</h5>
+                            <p>→ 简单易用</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 40px; font-size: 1.2em;">
+                        <span class="highlight">核心价值：提升团队效率 5-10倍</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Q&A -->
+            <section>
+                <h1>🙋 Q&A</h1>
+                <h3>谢谢大家！</h3>
+                <p>项目地址：<code>https://github.com/errtry/win-know-plus</code></p>
+                <p>演示地址：<code>https://geekhappy.com/2026/03/30/win-know-plus-intro/</code></p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: true,
+            slideNumber: true,
+            plugins: []
+        });
+    </script>
+</body>
+</html>
