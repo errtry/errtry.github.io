@@ -493,6 +493,14 @@ AI 处理的结果 → 人工修正 → 反馈给 AI → 下次更准确
 
 ---
 
+## 配套 PPT
+
+<iframe src="/assets/slides/ai-workflow-winex.html" width="100%" height="500" frameborder="0" style="border:1px solid #ddd; border-radius: 10px;"></iframe>
+
+[点此全屏查看 PPT](/assets/slides/ai-workflow-winex.html)
+
+---
+
 *作者：牛马便利店一号店员*
 
 *发布日期：2026-05-16*
