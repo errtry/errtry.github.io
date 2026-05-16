@@ -22,6 +22,7 @@
         .reveal .before-after div { width: 45%; }
         .reveal .checkmark { color: #21ba45; font-size: 1.5em; }
         .reveal .cross { color: #db2828; font-size: 1.5em; }
+        .reveal .mermaid-container { background: #f5f5f5; border-radius: 8px; padding: 10px; margin: 10px 0; }
     </style>
 </head>
 <body>
@@ -31,23 +32,24 @@
             <!-- Slide 1: 封面 -->
             <section>
                 <h1>🚀 AI 落地工作流</h1>
-                <h3 class="subtitle">WiNEX 实施团队的 5 个实战场景</h3>
+                <h3 class="subtitle">WiNEX 实施团队 · 个人+项目共 6 个实战场景</h3>
                 <p class="author">分享人：牛马便利店一号店员</p>
-                <p class="author">2026-05-16</p>
+                <p class="author">2026-05-16（更新版 v2.0）</p>
             </section>
 
             <!-- Slide 2: 背景 - 痛点 -->
             <section>
                 <h2>📊 我们原来的工作方式</h2>
-                <div style="text-align: left; padding: 0 40px;">
+                <div style="text-align: left; padding: 0 40px; font-size: 0.9em;">
                     <p>📱 微信群消息 → <span style="color: #db2828;">人工</span> 筛选问题 → 手动登记底稿</p>
                     <p>🐛 系统报错   → <span style="color: #db2828;">人工</span> 查日志   → 人工找解决方案</p>
                     <p>⚙️ 参数配置   → <span style="color: #db2828;">人工</span> 对照 SOP → 手动一步步操作</p>
                     <p>🔌 接口异常   → <span style="color: #db2828;">人工</span> 翻接口日志 → 猜原因</p>
+                    <p>📋 工时填报   → <span style="color: #db2828;">人工</span> 回忆当天做了什么 → 手动填工时系统</p>
                 </div>
-                <div class="highlight" style="margin-top: 30px;">
+                <div class="highlight" style="margin-top: 30px; font-size: 0.9em;">
                     <strong>⚠️ 核心痛点：</strong><br>
-                    重复劳动多 · 响应速度慢 · 经验难沉淀
+                    重复劳动多 · 响应速度慢 · 经验难沉淀 · 工时填报耗时
                 </div>
             </section>
 
@@ -63,10 +65,10 @@
                 </div>
             </section>
 
-            <!-- Slide 4: 5 个场景总览 -->
+            <!-- Slide 4: 6 个场景总览 -->
             <section>
-                <h2>🗺️ 5 个落地场景</h2>
-                <table style="font-size: 0.7em;">
+                <h2>🗺️ 6 个落地场景</h2>
+                <table style="font-size: 0.65em;">
                     <tr>
                         <th>场景</th>
                         <th>原来耗时</th>
@@ -74,31 +76,37 @@
                         <th>提升</th>
                     </tr>
                     <tr>
-                        <td>① 微信群消息 → 底稿</td>
+                        <td>① 个人：工时填报</td>
+                        <td>15~30 分钟/天</td>
+                        <td><strong style="color: #21ba45;">3~5 分钟</strong></td>
+                        <td style="color: #21ba45;">3~10x</td>
+                    </tr>
+                    <tr>
+                        <td>② 微信群消息 → 底稿</td>
                         <td>30~60 分钟/天</td>
                         <td><strong style="color: #21ba45;">0（全自动）</strong></td>
                         <td style="color: #21ba45;">∞</td>
                     </tr>
                     <tr>
-                        <td>② 底稿分析 + 计划</td>
+                        <td>③ 底稿分析 + 计划</td>
                         <td>20~30 分钟</td>
                         <td><strong style="color: #21ba45;">&lt;1 分钟</strong></td>
                         <td style="color: #21ba45;">20~30x</td>
                     </tr>
                     <tr>
-                        <td>③ 知识库 → 解决方案</td>
+                        <td>④ 知识库 → 解决方案</td>
                         <td>10~30 分钟</td>
                         <td><strong style="color: #21ba45;">1~3 分钟</strong></td>
                         <td style="color: #21ba45;">5~10x</td>
                     </tr>
                     <tr>
-                        <td>④ 全景日志分析</td>
+                        <td>⑤ 全景日志分析</td>
                         <td>30~120 分钟</td>
                         <td><strong style="color: #21ba45;">3~10 分钟</strong></td>
                         <td style="color: #21ba45;">10~40x</td>
                     </tr>
                     <tr>
-                        <td>⑤ SOP 测试 + 参数配置</td>
+                        <td>⑥ SOP 测试 + 接口分析</td>
                         <td>2~4 小时/版本</td>
                         <td><strong style="color: #21ba45;">15~30 分钟</strong></td>
                         <td style="color: #21ba45;">4~16x</td>
@@ -106,7 +114,31 @@
                 </table>
             </section>
 
-            <!-- Slide 5: 场景一 -->
+            <!-- Slide 5: 个人场景 -->
+            <section>
+                <h2>个人场景：工时填报自动化</h2>
+                <div class="before-after" style="font-size: 0.8em;">
+                    <div>
+                        <h4 class="cross">❌ 原来的做法</h4>
+                        <p>下班前 → 回忆当天做了什么</p>
+                        <p>→ 打开工时系统</p>
+                        <p>→ 手动填写（项目A：Xh，项目B：Yh）</p>
+                        <p style="color: #db2828;">漏填率 ~10%</p>
+                    </div>
+                    <div>
+                        <h4 class="checkmark">✅ AI 做法</h4>
+                        <p>AI 读取本地日志 + 当日底稿</p>
+                        <p>→ 自动汇总工作摘要</p>
+                        <p>→ 预估各项目工时</p>
+                        <p>→ <strong>人工确认后一键提交</strong></p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p><span class="big-number" style="font-size: 2em;">3~5</span> 分钟/天（AI 生成 + 人工确认）</p>
+                </div>
+            </section>
+
+            <!-- Slide 6: 场景一 -->
             <section>
                 <h2>场景一：微信群消息 → 自动底稿</h2>
                 <div class="before-after" style="font-size: 0.8em;">
@@ -131,7 +163,7 @@
                 </div>
             </section>
 
-            <!-- Slide 6: 场景二 -->
+            <!-- Slide 7: 场景二 -->
             <section>
                 <h2>场景二：底稿分析 → 风险识别 + 计划</h2>
                 <div style="text-align: left; padding: 0 60px; font-size: 0.8em;">
@@ -146,7 +178,7 @@
                 </div>
             </section>
 
-            <!-- Slide 7: 场景三 -->
+            <!-- Slide 8: 场景三 -->
             <section>
                 <h2>场景三：知识库检索 → 自动生成方案</h2>
                 <div style="text-align: left; padding: 0 40px;">
@@ -167,7 +199,7 @@ AI 综合输出解决方案（附链接）
                 </div>
             </section>
 
-            <!-- Slide 8: 场景四 -->
+            <!-- Slide 9: 场景四 -->
             <section>
                 <h2>场景四：全景日志分析 → 精准定位</h2>
                 <div style="text-align: left; padding: 0 40px; font-size: 0.8em;">
@@ -190,39 +222,42 @@ AI 综合输出解决方案（附链接）
                 </div>
             </section>
 
-            <!-- Slide 9: 场景五 -->
+            <!-- Slide 10: 场景五 + 六 -->
             <section>
-                <h2>场景五：SOP 测试 + 参数配置自动化</h2>
+                <h2>场景五 + 六：SOP 测试 & 接口日志分析</h2>
                 <div style="text-align: left; padding: 0 40px; font-size: 0.8em;">
-                    <p><strong>原来 SOP 测试：</strong></p>
-                    <p>对照 SOP 文档 → 人工一步步操作（2~4 小时/版本）</p>
-                    <p style="margin: 10px 0;"><strong>现在 AI 自动：</strong></p>
-                    <p>✅ 读取 SOP → 自动执行测试流程</p>
+                    <p><strong>SOP 自动化测试：</strong></p>
+                    <p>✅ AI 读取 SOP → 自动执行测试流程</p>
                     <p>✅ 自动配置系统参数（读配置手册）</p>
                     <p>✅ 输出测试报告（通过/失败 + 原因）</p>
+                    <p style="margin-top: 15px;"><strong>接口日志分析：</strong></p>
+                    <p>✅ AI 分析请求参数 / 响应报错 / 下游服务</p>
+                    <p>✅ 给出问题定位和解决方案</p>
+                    <p>✅ 参考历史类似案例</p>
                 </div>
                 <div style="margin-top: 20px;">
-                    <p><span class="big-number">4~16x</span> 效率提升</p>
                     <p>漏配率：<span style="color: #db2828;">~5%</span> → <span style="color: #21ba45;">&lt;1%</span></p>
+                    <p>接口定位准确率：<span style="color: #db2828;">~75%</span> → <span style="color: #21ba45;">~88%</span></p>
                 </div>
             </section>
 
-            <!-- Slide 10: 综合效果 -->
+            <!-- Slide 11: 综合效果 -->
             <section>
                 <h2>📈 综合效果对比</h2>
-                <div class="big-number" style="color: #2185d0;">每人每天节省 2~3 小时</div>
+                <div class="big-number" style="color: #2185d0;">每人每天节省 2.5~3.5 小时</div>
                 <div style="margin-top: 30px; font-size: 0.9em;">
-                    <p>团队 10 人 = <strong style="color: #21ba45; font-size: 1.3em;">每天节省 20~30 小时</strong></p>
+                    <p>团队 10 人 = <strong style="color: #21ba45; font-size: 1.3em;">每天节省 25~35 小时</strong></p>
                 </div>
                 <div style="margin-top: 40px; font-size: 0.8em; text-align: left; padding: 0 80px;">
                     <p>✅ 响应速度提升 <strong>5~40 倍</strong></p>
                     <p>✅ 经验自动沉淀到知识库</p>
                     <p>✅ 新人接手时间缩短 <strong>50%</strong></p>
                     <p>✅ 客户满意度提升（秒级响应简单问题）</p>
+                    <p>✅ 工时填报准确率提升 <strong>70%</strong></p>
                 </div>
             </section>
 
-            <!-- Slide 11: 落地要点（避坑） -->
+            <!-- Slide 12: 落地要点（避坑） -->
             <section>
                 <h2>⚠️ 落地要点（避坑指南）</h2>
                 <div style="text-align: left; padding: 0 60px; font-size: 0.85em;">
@@ -240,42 +275,34 @@ AI 综合输出解决方案（附链接）
                 </div>
             </section>
 
-            <!-- Slide 12: 后续规划 -->
+            <!-- Slide 13: 后续计划：统一工作流 -->
             <section>
-                <h2>🚀 后续规划</h2>
-                <table style="font-size: 0.75em; margin-top: 30px;">
-                    <tr>
-                        <th>规划</th>
-                        <th>说明</th>
-                        <th>预计</th>
-                    </tr>
-                    <tr>
-                        <td>AI 自动跟进</td>
-                        <td>底稿中未解决问题，AI 每天自动提醒跟进</td>
-                        <td>Q3</td>
-                    </tr>
-                    <tr>
-                        <td>知识库自动更新</td>
-                        <td>AI 根据新工单自动更新 Wiki</td>
-                        <td>Q3</td>
-                    </tr>
-                    <tr>
-                        <td>跨项目知识共享</td>
-                        <td>AI 把一个项目的解决方案推荐给类似项目</td>
-                        <td>Q4</td>
-                    </tr>
-                    <tr>
-                        <td>智能排优</td>
-                        <td>AI 根据底稿自动给出今日最优工作顺序</td>
-                        <td>Q4</td>
-                    </tr>
-                </table>
+                <h2>🚀 后续计划：整合成统一工作流</h2>
+                <div style="text-align: left; padding: 0 40px; font-size: 0.8em;">
+                    <p><strong>目前：</strong>各场景是<span style="color: #db2828;">分散的点</span></p>
+                    <p><strong>下一步：</strong>串联成<span style="color: #21ba45;">完整的 AI 工作流</span></p>
+                    <div style="margin-top: 20px; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                        <p>📱 微信群消息 → AI 登记底稿</p>
+                        <p>   ↓</p>
+                        <p>📊 底稿分析 → AI 识别风险 + 生成计划</p>
+                        <p>   ↓</p>
+                        <p>🤖 客户问题 → AI 结合知识库生成方案</p>
+                        <p>   ↓</p>
+                        <p>🐛 系统报错 → AI 分析日志精准定位</p>
+                        <p>   ↓</p>
+                        <p>📋 下班前 → AI 汇总日志+底稿 → 生成工时填报</p>
+                        <p>   ↓</p>
+                        <p>✅ 人工确认 → 一键提交工时系统</p>
+                    </div>
+                    <p style="margin-top: 20px;"><strong>预计完成时间：</strong>2026 年 Q3</p>
+                </div>
             </section>
 
-            <!-- Slide 13: 总结 -->
+            <!-- Slide 14: 总结 -->
             <section>
                 <h2>💡 总结</h2>
                 <div style="text-align: left; padding: 0 80px; font-size: 0.9em; margin-top: 40px;">
+                    <p>✅ <strong>工时填报</strong> → AI 根据日志+底稿自动生成，人工确认提交</p>
                     <p>✅ <strong>微信群消息</strong> → AI 自动登记底稿</p>
                     <p>✅ <strong>底稿分析</strong> → AI 识别风险 + 生成计划</p>
                     <p>✅ <strong>客户问题</strong> → AI 结合知识库生成方案</p>
@@ -288,14 +315,14 @@ AI 综合输出解决方案（附链接）
                 </div>
             </section>
 
-            <!-- Slide 14: 谢谢 -->
+            <!-- Slide 15: 谢谢 -->
             <section>
                 <h1>谢谢聆听！</h1>
                 <div style="margin-top: 60px; font-size: 0.9em; color: #666;">
                     <p>有问题欢迎交流 🤝</p>
                     <p style="margin-top: 30px;">文章地址：<br><code style="font-size: 0.8em;">geekhappy.com/2026/05/16/ai-workflow-at-winex/</code></p>
                 </div>
-                <p class="author">牛马便利店一号店员 | 2026-05-16</p>
+                <p class="author">牛马便利店一号店员 | 2026-05-16（v2.0）</p>
             </section>
 
         </div>
